@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORTELuX Bar do Cuca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Escolha um número da rifa</h1>
+    <div id="numbers">
+        <script>
+            for (let i = 0; i < 100; i++) {
+                const number = i.toString().padStart(2, '0');
+                document.write(`<button onclick="chooseNumber(${number})">${number}</button>`);
+            }
+        </script>
+    </div>
+    <div id="form" style="display: none;">
+        <h2>Cadastro para a rifa</h2>
+        <form id="raffleForm" onsubmit="submitForm(event)">
+            <input type="hidden" id="selectedNumber">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required><br>
+            <label for="phone">Telefone:</label>
+            <input type="text" id="phone" required><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
